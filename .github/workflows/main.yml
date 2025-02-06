@@ -20,3 +20,11 @@ jobs:
 
       - name: Push to Docker Hub
         run: docker push  menakakarichiyappakumar/devops-workshop:latest
+
+      - name: Deploy Container
+        run: docker run -d -p 5000:5000 --name myapp-container menakakarichiyappakumar/devops-workshopp:latest
+
+      - name: Test Deployment
+        run: |
+          sleep 10 # Give container some time to start
+          curl --fail http://localhost:5000 || (docker logs myapp-container && exit 1)
