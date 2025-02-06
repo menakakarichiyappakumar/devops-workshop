@@ -22,7 +22,7 @@ jobs:
         run: docker push  menakakarichiyappakumar/devops-workshop:latest
 
       - name: Deploy Container
-        run: docker run -d -p 5000:5000 --name myapp-container menakakarichiyappakumar/devops-workshopp:latest
+        run: docker run -d -p 5000:5000 --name myapp-container menakakarichiyappakumar/devops-workshop:latest
 
       - name: Test Deployment
         run: |
